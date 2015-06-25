@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @book.name %>
+</p>
+
+<p>
+  <strong>Auhter:</strong>
+  <%= @book.auhter %>
+</p>
+
+<p>
+  <strong>Isbn13:</strong>
+  <%= @book.isbn13 %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @book.owner.name %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>書籍名</th>
+      <th>貸出者</th>
+      <th>貸出日</th>
+      <th>返却予定日</th>
+      <th>返却日</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lendings.each do |lending| %>
+      <tr>
+        <td><%= lending.media.name %></td>
+        <td><%= lending.user.name %></td>
+        <td><%= lending.day_borrow %></td>
+        <td><%= lending.day_estimated_return %></td>
+        <td><%= lending.day_actual_return %></td>
+        <td><% if lending.day_actual_return.nil? %>
+          <%= link_to '返す', '/lendings/' + lending.id.to_s + '/edit' %>
+        <% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

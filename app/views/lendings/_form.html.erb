@@ -1,0 +1,46 @@
+<%= form_for(@lending) do |f| %>
+  <% if @lending.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lending.errors.count, "error") %> prohibited this lending from being saved:</h2>
+
+      <ul>
+      <% @lending.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :madia_id %><br>
+    <%= f.text_field :media_name, :disabled => true %>
+    <%= f.hidden_field :media_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_name, :disabled => true %>
+    <%= f.hidden_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :day_borrow %><br>
+    <%= f.date_select :day_borrow, :disabled => (@ope == :returning) %>
+  </div>
+  <div class="field">
+    <%= f.label :day_estimated_return %><br>
+    <%= f.date_select :day_estimated_return, :disabled => (@ope == :returning)  %>
+  </div>
+  <% unless @ope == :lending %>
+    <div class="field">
+      <%= f.label :day_actual_return %><br>
+      <%= f.date_select :day_actual_return %>
+    </div>
+    <div class="field">
+      <%= f.label :review %><br>
+      <%= f.text_area :review %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+<p>
+  <strong>Day borrow:</strong>
+  <%= @lending.day_borrow %>
+</p>
+
+<p>
+  <strong>Day estimated return:</strong>
+  <%= @lending.day_estimated_return %>
+</p>
+
+<p>
+  <strong>Day actual return:</strong>
+  <%= @lending.day_actual_return %>
+</p>
+
+<p>
+  <strong>Media:</strong>
+  <%= @lending.media.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @lending.user.name %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @lending.review %>
+</p>
+
+<%= link_to '返却', edit_lending_path(@lending) %> |
+<%= link_to '書籍一覧', books_path %>
