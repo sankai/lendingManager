@@ -4,6 +4,18 @@ ja:
       emp: 従業員
       dept: 組織
     attributes:
+      book:
+        name: 書籍名
+        auhter: 著者
+        isbn13: ISBN-13
+        owner: 所有者
+      lending:
+        madia: 書籍名
+        user: 借出者
+        day_borrow: 貸出日
+        day_estimated_return: 返却予定日
+        day_actual_return: 返却日
+        review: レビュー
       emp:
         id: "ID"
         name: 氏名

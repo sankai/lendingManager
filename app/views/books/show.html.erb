@@ -1,30 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>書籍名:</strong>
   <%= @book.name %>
 </p>
 
 <p>
-  <strong>Auhter:</strong>
+  <strong>著者:</strong>
   <%= @book.auhter %>
 </p>
 
 <p>
-  <strong>Isbn13:</strong>
+  <strong>ISBN-13:</strong>
   <%= @book.isbn13 %>
 </p>
 
 <p>
-  <strong>Owner:</strong>
+  <strong>所有者:</strong>
   <%= @book.owner.name %>
 </p>
 
 <table>
   <thead>
     <tr>
-      <th>書籍名</th>
-      <th>貸出者</th>
+      <th>借出者</th>
       <th>貸出日</th>
       <th>返却予定日</th>
       <th>返却日</th>
@@ -35,7 +34,6 @@
   <tbody>
     <% @lendings.each do |lending| %>
       <tr>
-        <td><%= lending.media.name %></td>
         <td><%= lending.user.name %></td>
         <td><%= lending.day_borrow %></td>
         <td><%= lending.day_estimated_return %></td>

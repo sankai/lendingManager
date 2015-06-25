@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :madia_id %><br>
+    <%= f.label :madia %><br>
     <%= f.text_field :media_name, :disabled => true %>
     <%= f.hidden_field :media_id %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
+    <%= f.label :user %><br>
     <%= f.text_field :user_name, :disabled => true %>
     <%= f.hidden_field :user_id %>
   </div>
@@ -37,7 +37,7 @@
     </div>
     <div class="field">
       <%= f.label :review %><br>
-      <%= f.text_area :review %>
+      <%= f.text_area :review, :size => "40x10" %>
     </div>
   <% end %>
   <div class="actions">

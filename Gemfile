@@ -50,3 +50,20 @@ gem 'spring',        group: :development
 
 # use devise
 gem 'devise'
+
+# ページ繰り
+gem 'will_paginate'
+
+# 国際化（日本語化）
+gem 'rails-i18n'
+
+# 検索条件の指示
+gem 'ransack'
+
+# CSS Library twitter-bootstrap 
+gem 'twitter-bootstrap-rails'
+gem 'will_paginate-bootstrap'
+gem 'therubyracer'
+gem 'less-rails'
+
+gem 'jquery-turbolinks' 
