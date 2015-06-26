@@ -1,6 +1,6 @@
 <h1>書籍一覧</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>名前</th>
@@ -18,13 +18,13 @@
         <td><%= book.auhter %></td>
         <td><%= book.isbn13 %></td>
         <td><%= book.owner_name %></td>
-        <td><%= link_to '詳細', book %></td>
+        <td><%= link_to '詳細', book,  :class => 'btn btn-default btn-xs' %></td>
         <td><% if book.to_be_let? %>
-          <%= link_to '借りる', '/lendings/new/' + book.id.to_s %>
+          <%= link_to '借りる', '/lendings/new/' + book.id.to_s,  :class => 'btn btn-default btn-xs' %>
         <% end %></td>
         <% if book.owner == current_user %>
-          <td><%= link_to '編集', edit_book_path(book) %></td>
-          <td><%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '編集', edit_book_path(book), :class => 'btn btn-warning btn-xs' %></td>
+          <td><%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-warning btn-xs' %></td>
         <% else %>
           <td></td>
           <td></td>
@@ -35,7 +35,7 @@
 
 <br>
 <%= will_paginate @books, { :previous_label => '&lt 前へ', :next_label => '次へ &gt' ,:renderer => BootstrapPagination::Rails }  %>
-<%= link_to '新規書籍', new_book_path %>
+<%= link_to '新規書籍', new_book_path, :class => 'btn btn-default btn-xs'  %>
 <hr>
 <br>
 <%= form_tag 'books/upload', :multipart => true do %>
