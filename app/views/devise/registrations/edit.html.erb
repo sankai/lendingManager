@@ -32,7 +32,12 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
+  <div class="field">
+    <%= f.label :isadmin %><br />
+    <%= f.check_box 'isadmin', {:checked => current_user.isadmin }  %>  
+  </div>
+
+<div class="actions">
     <%= f.submit "Update" %>
   </div>
 <% end %>
