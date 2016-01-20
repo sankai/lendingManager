@@ -41,12 +41,14 @@
         <td><%= lending.day_estimated_return %></td>
         <td><%= lending.day_actual_return %></td>
         <td><% if lending.day_actual_return.nil? %>
-          <%= link_to '返す', '/lendings/' + lending.id.to_s + '/edit' %>
+          <% if lending.user == current_user %>
+            <%= link_to '返す', '/lendings/' + lending.id.to_s + '/edit' %>
+          <% end %>
         <% end %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to '編集', edit_book_path(@book) %> |
+<%= link_to '一覧', books_path %>

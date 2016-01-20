@@ -70,6 +70,11 @@ class LendingsController < ApplicationController
     end
   end
 
+  def ones_lendings
+    @lendings = current_user.lendings
+    render :action => 'index'    
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lending

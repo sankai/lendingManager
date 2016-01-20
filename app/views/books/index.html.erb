@@ -34,8 +34,8 @@
 </table>
 
 <br>
-<%= will_paginate @books, { :previous_label => '&lt 前へ', :next_label => '次へ &gt' ,:renderer => BootstrapPagination::Rails }  %>
-<%= link_to '新規書籍', new_book_path, :class => 'btn btn-default btn-xs'  %>
+<%= will_paginate @books, { :previous_label => '&lt 前へ', :next_label => '次へ &gt' ,:renderer => BootstrapPagination::Rails }  %><br>
+<%= link_to '書籍の新規登録', new_book_path, :class => 'btn btn-default btn-xs'  %>
 <hr>
 <br>
 <%= form_tag 'books/upload', :multipart => true do %>

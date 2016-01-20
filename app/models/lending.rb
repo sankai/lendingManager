@@ -1,6 +1,7 @@
 class Lending < ActiveRecord::Base
   belongs_to :media, :class_name => "Book"
   belongs_to :user
+  #belongs_to :book
   
   def media_name
     unless media.nil?

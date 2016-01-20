@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get       'lendings/new/:book'  => 'lendings#new' 
 
+  get       '/lending/ones_lendings'  => 'lendings#ones_lendings' 
+
   devise_for :users
   
   resources :books
